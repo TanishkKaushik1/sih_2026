@@ -1,13 +1,13 @@
 import React from 'react';
 import { DashboardLayout } from '../layouts/DashboardLayout';
-import { useMockStream } from '../hooks/useMockStream';
+import { useMeshStream } from '../hooks/useMeshStream';
 import { SensorGauge } from '../components/telemetry/SensorGauge';
 import { LiveMap } from '../components/map/LiveMap';
 import { AlertFeed } from '../components/telemetry/AlertFeed';
 
 export const Overview: React.FC = () => {
   // Swapped useMeshStream to useMockStream to match the import and test the UI
-  const { nodeList, activeNodeCount } = useMockStream();
+  const { nodeList, activeNodeCount } = useMeshStream();
 
   return (
     <DashboardLayout>

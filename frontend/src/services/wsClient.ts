@@ -1,4 +1,4 @@
-import type{ TelemetryPayload } from '../types/hardware';
+import type { TelemetryPayload } from '../types/hardware';
 
 type MessageCallback = (data: TelemetryPayload) => void;
 
@@ -9,7 +9,9 @@ class MeshWebSocket {
   private readonly url: string;
 
   constructor() {
-    this.url = import.meta.env.VITE_WS_BASE_URL || 'ws://localhost:8000/ws';
+    const baseUrl = import.meta.env.VITE_WS_BASE_URL || 'ws://localhost:8000/ws';
+    // Guarantee we hit the exact FastAPI route, regardless of trailing slashes in the env file
+    this.url = baseUrl.endsWith('/telemetry') ? baseUrl : `${baseUrl}/telemetry`;
   }
 
   connect() {
