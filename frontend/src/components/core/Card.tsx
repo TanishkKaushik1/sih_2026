@@ -2,7 +2,7 @@ import React from 'react';
 import type{ NodeStatus } from '../../types/hardware';
 
 interface CardProps {
-  title: string;
+  title: React.ReactNode;
   children: React.ReactNode;
   className?: string;
   status?: NodeStatus;
