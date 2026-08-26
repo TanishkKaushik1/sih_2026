@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  /* Core layout colors */
+  --color-base: #000000;
+  --color-surface: #121212;
+  --color-elevated: #1E1E1E;
+  
+  /* Sensor Status Accents */
+  --color-safe: #10B981;
+  --color-warning: #F59E0B;
+  --color-critical: #EF4444;
+  
+  /* Text */
+  --color-muted: #A1A1AA;
+}
+
+/* Base body styling (Using standard CSS variables to avoid VS Code @apply warnings) */
+body {
+  background-color: var(--color-base);
+  color: #ffffff;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
